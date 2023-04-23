@@ -1,6 +1,6 @@
 # encoding=GBK
-# ¿ª·¢Ê±¼ä£º2023/4/16 13:26
-# ¿ª·¢ÈË K a r r i g a n
+# å¼€å‘æ—¶é—´ï¼š2023/4/16 13:26
+# å¼€å‘äºº K a r r i g a n
 import os
 
 filename = 'student.txt'
@@ -10,78 +10,78 @@ def main():
     while True:
         menu()
         try:
-            choice = int(input('ÇëÑ¡Ôñ'))
+            choice = int(input('è¯·é€‰æ‹©'))
         except:
-            print('ÇåÊäÈë0-7µÄÊı×Ö')
+            print('æ¸…è¾“å…¥0-7çš„æ•°å­—')
             continue
 
         if choice in [0, 1, 2, 3, 4, 5, 6, 7]:
             if choice == 0:
-                answer = input('ÄúÈ·¶¨ÒªÍË³öÏµÍ³Âğ£¿y/n')
+                answer = input('æ‚¨ç¡®å®šè¦é€€å‡ºç³»ç»Ÿå—ï¼Ÿy/n')
                 if answer == 'y' or 'Y':
-                    print('Ğ»Ğ»ÄúµÄÊ¹ÓÃ')
-                    break  # ÍË³öÏµÍ³
+                    print('è°¢è°¢æ‚¨çš„ä½¿ç”¨')
+                    break  # é€€å‡ºç³»ç»Ÿ
                 else:
                     continue
             elif choice == 1:
-                insert()  # Â¼ÈëÑ§ÉúĞÅÏ¢º¯Êı
+                insert()  # å½•å…¥å­¦ç”Ÿä¿¡æ¯å‡½æ•°
             elif choice == 2:
-                search()  # ²éÕÒÑ§ÉúĞÅÏ¢
+                search()  # æŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯
             elif choice == 3:
-                delete()  # É¾³ıÑ§ÉúĞÅÏ¢
+                delete()  # åˆ é™¤å­¦ç”Ÿä¿¡æ¯
             elif choice == 4:
-                modify()  # ĞŞ¸ÄÑ§ÉúĞÅÏ¢
+                modify()  # ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
             elif choice == 5:
-                sort()  # ÅÅĞò
+                sort()  # æ’åº
             elif choice == 6:
-                total()  # Í³¼ÆÑ§Éú×ÜÈËÊı
+                total()  # ç»Ÿè®¡å­¦ç”Ÿæ€»äººæ•°
             elif choice == 7:
-                show()  # ÏÔÊ¾ËùÓĞÑ§ÉúĞÅÏ¢
+                show()  # æ˜¾ç¤ºæ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
         else:
-            print('ÇåÊäÈë0-7µÄÊı×Ö')
+            print('æ¸…è¾“å…¥0-7çš„æ•°å­—')
 
 
 def menu():
-    print('===================Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³==========================')
-    print('-----------------------¹¦ÄÜ²Ëµ¥----------------------------')
-    print('\t\t\t\t\t1.Â¼ÈëÑ§ÉúĞÅÏ¢')
-    print('\t\t\t\t\t2.²éÕÒÑ§ÉúĞÅÏ¢')
-    print('\t\t\t\t\t3.É¾³ıÑ§ÉúĞÅÏ¢')
-    print('\t\t\t\t\t4.ĞŞ¸ÄÑ§ÉúĞÅÏ¢')
-    print('\t\t\t\t\t5.ÅÅĞò')
-    print('\t\t\t\t\t6.Í³¼ÆÑ§Éú×ÜÈËÊı')
-    print('\t\t\t\t\t7.ÏÔÊ¾ËùÓĞÑ§ÉúĞÅÏ¢')
-    print('\t\t\t\t\t0.ÍË³öÏµÍ³')
+    print('===================å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿ==========================')
+    print('-----------------------åŠŸèƒ½èœå•----------------------------')
+    print('\t\t\t\t\t1.å½•å…¥å­¦ç”Ÿä¿¡æ¯')
+    print('\t\t\t\t\t2.æŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯')
+    print('\t\t\t\t\t3.åˆ é™¤å­¦ç”Ÿä¿¡æ¯')
+    print('\t\t\t\t\t4.ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯')
+    print('\t\t\t\t\t5.æ’åº')
+    print('\t\t\t\t\t6.ç»Ÿè®¡å­¦ç”Ÿæ€»äººæ•°')
+    print('\t\t\t\t\t7.æ˜¾ç¤ºæ‰€æœ‰å­¦ç”Ÿä¿¡æ¯')
+    print('\t\t\t\t\t0.é€€å‡ºç³»ç»Ÿ')
     print('----------------------------------------------------------')
 
 
 def insert():
     stu_list = []
     while True:
-        id = input('ÇëÊäÈëÑ§ÉúµÄID£º')
+        id = input('è¯·è¾“å…¥å­¦ç”Ÿçš„IDï¼š')
         if not id:
             break
-        name = input('ÇëÊäÈëĞÕÃû£º')
+        name = input('è¯·è¾“å…¥å§“åï¼š')
         if not name:
             break
 
         try:
-            english = int(input('ÇëÊäÈëÓ¢Óï³É¼¨£º'))
-            python = int(input('ÇëÊäÈëPython³É¼¨£º'))
-            java = int(input('ÇëÊäÈëJava³É¼¨£º'))
+            english = int(input('è¯·è¾“å…¥è‹±è¯­æˆç»©ï¼š'))
+            python = int(input('è¯·è¾“å…¥Pythonæˆç»©ï¼š'))
+            java = int(input('è¯·è¾“å…¥Javaæˆç»©ï¼š'))
         except:
-            print('ÊäÈëÎŞĞ§£¬ÇëÊäÈëÕûÊı³É¼¨')
+            print('è¾“å…¥æ— æ•ˆï¼Œè¯·è¾“å…¥æ•´æ•°æˆç»©')
             continue
         student = {'id': id, 'name': name, 'english': english, 'python': python, 'java': java}
         stu_list.append(student)
-        answer = input('ÊÇ·ñ¼ÌĞøÌí¼Ó£¿y/n')
+        answer = input('æ˜¯å¦ç»§ç»­æ·»åŠ ï¼Ÿy/n')
         if answer == 'y':
             continue
         else:
             break
 
     save(stu_list)
-    print('Ñ§ÉúĞÅÏ¢Â¼ÈëÍê±Ï£¡')
+    print('å­¦ç”Ÿä¿¡æ¯å½•å…¥å®Œæ¯•ï¼')
 
 
 def save(lst):
@@ -94,23 +94,23 @@ def save(lst):
     stu_txt.close()
 
 
-def search():#»ñÈ¡Ñ§ÉúĞÅÏ¢²¢Ğ´ÈëÁĞ±í
+def search():#è·å–å­¦ç”Ÿä¿¡æ¯å¹¶å†™å…¥åˆ—è¡¨
     stu_query=[]
     while True:
         id=''
         name=''
         if os.path.exists(filename):
             try:
-                mode = int(input('ÇëÑ¡Ôñ²éÕÒ·½Ê½£º1.ID£»2.ĞÕÃû'))
+                mode = int(input('è¯·é€‰æ‹©æŸ¥æ‰¾æ–¹å¼ï¼š1.IDï¼›2.å§“å'))
             except:
-                print('ÇëÑ¡Ôñ1»òÕß2!')
+                print('è¯·é€‰æ‹©1æˆ–è€…2!')
                 continue
             if mode == 1:
-                id=input('ÇëÊäÈëÑ§ÉúµÄID£º')
+                id=input('è¯·è¾“å…¥å­¦ç”Ÿçš„IDï¼š')
             elif mode == 2:
-                name=input('ÇëÊäÈëÑ§ÉúµÄĞÕÃû:')
+                name=input('è¯·è¾“å…¥å­¦ç”Ÿçš„å§“å:')
             else:
-                print('ÇëÑ¡Ôñ1»òÕß2!')
+                print('è¯·é€‰æ‹©1æˆ–è€…2!')
                 search()
             with open(filename,'r',encoding='GBK') as rfile:
                 student=rfile.readlines()
@@ -122,27 +122,27 @@ def search():#»ñÈ¡Ñ§ÉúĞÅÏ¢²¢Ğ´ÈëÁĞ±í
                     elif name!='':
                         if d['name']==name:
                             stu_query.append(d)
-            #ÏÔÊ¾²éÑ¯½á¹û
+            #æ˜¾ç¤ºæŸ¥è¯¢ç»“æœ
             show_student(stu_query)\
-            #Çé¿öÁĞ±í
+            #æƒ…å†µåˆ—è¡¨
             stu_query.clear()
-            answer=input('ÊÇ·ñ¼ÌĞø²éÑ¯£¿y/n\n')
+            answer=input('æ˜¯å¦ç»§ç»­æŸ¥è¯¢ï¼Ÿy/n\n')
             if answer=='y':
                 continue
             else:
                 break
         else:
-            print('ÔİÎŞÑ§ÉúĞÅÏ¢£¡')
+            print('æš‚æ— å­¦ç”Ÿä¿¡æ¯ï¼')
             return
 
-def show_student(lst):#ÏÔÊ¾²éÑ¯½á¹û
+def show_student(lst):#æ˜¾ç¤ºæŸ¥è¯¢ç»“æœ
     if len(lst)==0:
-        print('Ã»ÓĞ²éÑ¯µ½Ñ§ÉúĞÅÏ¢£¡')
+        print('æ²¡æœ‰æŸ¥è¯¢åˆ°å­¦ç”Ÿä¿¡æ¯ï¼')
         return
-    #¶¨Òå±êÌâÏÔÊ¾¸ñÊ½
+    #å®šä¹‰æ ‡é¢˜æ˜¾ç¤ºæ ¼å¼
     format_title='{:^6}\t{:^12}\t{:^8}\t{:^10}\t{:^8}\t{:^8}'
-    print(format_title.format('ID','ĞÕÃû','Ó¢Óï³É¼¨','Python³É¼¨','Java³É¼¨','×Ü³É¼¨'))
-    #¶¨ÒåÄÚÈİÏÔÊ¾¸ñÊ½
+    print(format_title.format('ID','å§“å','è‹±è¯­æˆç»©','Pythonæˆç»©','Javaæˆç»©','æ€»æˆç»©'))
+    #å®šä¹‰å†…å®¹æ˜¾ç¤ºæ ¼å¼
     format_date='{:^6}\t{:^12}\t{:^8}\t{:^10}\t{:^8}\t{:^8}'
     for i in lst:
         print(format_date.format(i.get('id'),
@@ -158,44 +158,44 @@ def show_student(lst):#ÏÔÊ¾²éÑ¯½á¹û
 
 def delete():
     while True:
-        student_id = input('ÇëÊäÈëÒªÉ¾³ıµÄÑ§ÉúµÄID£º')
+        student_id = input('è¯·è¾“å…¥è¦åˆ é™¤çš„å­¦ç”Ÿçš„IDï¼š')
         if student_id:
             if os.path.exists(filename):
                 with open(filename, 'r', encoding='GBK') as file1:
                     student_oid = file1.readlines()
             else:
                 student_oid = []
-            flag = False  # ±íÊ¾ÊÇ·ñÉ¾³ı
+            flag = False  # è¡¨ç¤ºæ˜¯å¦åˆ é™¤
             if student_oid:
                 with open(filename, 'w', encoding='GBK') as wfile:
                     d = {}
                     for item in student_oid:
-                        d = dict(eval(item))  # ½«×Ö·û´®×ª³É×Öµä evalÈ¥µôË«ÒıºÅ
+                        d = dict(eval(item))  # å°†å­—ç¬¦ä¸²è½¬æˆå­—å…¸ evalå»æ‰åŒå¼•å·
                         if d['id'] != student_id:
                             wfile.write(str(d) + '\n')
                         else:
                             flag = True
                     if flag:
-                        print(f'IDÎª{student_id}µÄÑ§ÉúĞÅÏ¢ÒÑ¾­É¾³ı!')
+                        print(f'IDä¸º{student_id}çš„å­¦ç”Ÿä¿¡æ¯å·²ç»åˆ é™¤!')
                     else:
-                        print(f'Ã»ÓĞÕÒµ½IDÎª{student_id}µÄÑ§ÉúĞÅÏ¢')
+                        print(f'æ²¡æœ‰æ‰¾åˆ°IDä¸º{student_id}çš„å­¦ç”Ÿä¿¡æ¯')
             else:
-                print('ÎŞÑ§ÉúĞÅÏ¢')
+                print('æ— å­¦ç”Ÿä¿¡æ¯')
                 break
-            show()  # É¾ÍêÖ®ºóÏÔÊ¾ËùÓĞÑ§ÉúĞÅÏ¢
-            answer = input('ÊÇ·ñ¼ÌĞøÉ¾³ı£¿y/n')
+            show()  # åˆ å®Œä¹‹åæ˜¾ç¤ºæ‰€æœ‰å­¦ç”Ÿä¿¡æ¯
+            answer = input('æ˜¯å¦ç»§ç»­åˆ é™¤ï¼Ÿy/n')
             if answer == 'y':
                 continue
             else:
                 break
         else:
-            print('ÇëÊäÈëID!')
+            print('è¯·è¾“å…¥ID!')
             continue
 
 
 def modify():
     while True:
-        stu_id=input('ÇëÊäÈëÒªĞŞ¸ÄµÄÑ§ÉúID£º')
+        stu_id=input('è¯·è¾“å…¥è¦ä¿®æ”¹çš„å­¦ç”ŸIDï¼š')
         if stu_id:
             if os.path.exists(filename):
                 with open(filename,'r',encoding='GBK') as file1:
@@ -209,37 +209,37 @@ def modify():
                     for item in stu_oid:
                         d=dict(eval(item))
                         if d['id']==stu_id:
-                            print('ÒÑÕÒµ½Ñ§ÉúĞÅÏ¢£¬¿ÉÒÔĞŞ¸Ä')
+                            print('å·²æ‰¾åˆ°å­¦ç”Ÿä¿¡æ¯ï¼Œå¯ä»¥ä¿®æ”¹')
                             while True:
                                 try:
-                                    d['name']=input('ÇëÊäÈëĞÂĞÕÃû:')
+                                    d['name']=input('è¯·è¾“å…¥æ–°å§“å:')
                                     if not d['name']:
-                                        print('²»ÄÜÎª¿Õ£¡')
+                                        print('ä¸èƒ½ä¸ºç©ºï¼')
                                         continue
-                                    d['english']=int(input('ÇëÊäÈëĞÂµÄÓ¢Óï³É¼¨£º'))
-                                    d['python'] = int(input('ÇëÊäÈëĞÂµÄpython³É¼¨£º'))
-                                    d['java'] = int(input('ÇëÊäÈëĞÂµÄjava³É¼¨£º'))
+                                    d['english']=int(input('è¯·è¾“å…¥æ–°çš„è‹±è¯­æˆç»©ï¼š'))
+                                    d['python'] = int(input('è¯·è¾“å…¥æ–°çš„pythonæˆç»©ï¼š'))
+                                    d['java'] = int(input('è¯·è¾“å…¥æ–°çš„javaæˆç»©ï¼š'))
                                     break
                                 except:
-                                    print('ÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë')
+                                    print('è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥')
                             wfile.write(str(d)+'\n')
-                            print('ĞŞ¸Ä³É¹¦£¡')
+                            print('ä¿®æ”¹æˆåŠŸï¼')
                             flag=True
                         else:
                             wfile.write(item)
                     if not flag:
-                        print(f'Ã»ÓĞÕÒµ½IDÎª{stu_id}µÄÑ§ÉúĞÅÏ¢')
+                        print(f'æ²¡æœ‰æ‰¾åˆ°IDä¸º{stu_id}çš„å­¦ç”Ÿä¿¡æ¯')
             else:
-                print('ÎŞÑ§ÉúĞÅÏ¢£¡')
+                print('æ— å­¦ç”Ÿä¿¡æ¯ï¼')
                 break
             show()
-            answer=input('ÊÇ·ñ¼ÌĞøĞŞ¸ÄÑ§ÉúĞÅÏ¢£¿y/n')
+            answer=input('æ˜¯å¦ç»§ç»­ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯ï¼Ÿy/n')
             if answer=='y':
                 modify()
             else:
                 break
         else:
-            print('ÇëÊäÈëÑ§ÉúID£¡')
+            print('è¯·è¾“å…¥å­¦ç”ŸIDï¼')
 
 
 
@@ -251,17 +251,17 @@ def sort():
         stu_new=[]
         for i in stu_lst:
             stu_new.append(eval(i))
-        asc_or_desc=input('ÇëÑ¡Ôñ0.ÉıĞò£»1.½µĞò')
+        asc_or_desc=input('è¯·é€‰æ‹©0.å‡åºï¼›1.é™åº')
         if asc_or_desc=='0':
             asc_or_desc_bool=False
         elif asc_or_desc=='1':
             asc_or_desc_bool=True
         else:
-            print('ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë£¡')
+            print('æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼')
             sort()
-        mode=input('ÇëÑ¡ÔñÅÅĞò·½Ê½£º1.Ó¢Óï³É¼¨£»2.Python³É¼¨£»3.Java³É¼¨£»0.×Ü³É¼¨')
+        mode=input('è¯·é€‰æ‹©æ’åºæ–¹å¼ï¼š1.è‹±è¯­æˆç»©ï¼›2.Pythonæˆç»©ï¼›3.Javaæˆç»©ï¼›0.æ€»æˆç»©')
         if mode=='1':
-            stu_new.sort(key=lambda stu_new:int(stu_new['english']),reverse=asc_or_desc_bool)#lambdaº¯Êı¶ÁÈ¡×ÖµäÖĞµÄÌØ¶¨Êı¾İ
+            stu_new.sort(key=lambda stu_new:int(stu_new['english']),reverse=asc_or_desc_bool)#lambdaå‡½æ•°è¯»å–å­—å…¸ä¸­çš„ç‰¹å®šæ•°æ®
         elif mode=='2':
             stu_new.sort(key=lambda stu_new:int(stu_new['python']),reverse=asc_or_desc_bool)
         elif mode=='3':
@@ -269,12 +269,12 @@ def sort():
         elif mode=='0':
             stu_new.sort(key=lambda stu_new:int(stu_new['english'])+int(stu_new['python'])+int(stu_new['java']),reverse=asc_or_desc_bool)
         else:
-            print('ÄúµÄÊäÈëÓĞÎó£¬ÇëÖØĞÂÊäÈë£¡')
+            print('æ‚¨çš„è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼')
             sort()
         show_student(stu_new)
 
     else:
-        print('ÔİÎŞÎÄ¼ş£¡')
+        print('æš‚æ— æ–‡ä»¶ï¼')
         return
 
 
@@ -283,11 +283,11 @@ def total():
         with open(filename,'r',encoding='GBK') as file1:
             students=file1.readlines()
             if students:
-                print(f'Ò»¹²ÓĞ{len(students)}ÃûÑ§Éú')
+                print(f'ä¸€å…±æœ‰{len(students)}åå­¦ç”Ÿ')
             else:
-                print('»¹Ã»ÓĞÑ§ÉúĞÅÏ¢')
+                print('è¿˜æ²¡æœ‰å­¦ç”Ÿä¿¡æ¯')
     else:
-        print('ÔİÎ´ÓĞÎÄ¼ş±£´æ£¡')
+        print('æš‚æœªæœ‰æ–‡ä»¶ä¿å­˜ï¼')
 
 
 def show():
@@ -300,11 +300,12 @@ def show():
             if student_lst:
                 show_student(student_lst)
             else:
-                print('ÎŞÑ§ÉúĞÅÏ¢£¡')
+                print('æ— å­¦ç”Ÿä¿¡æ¯ï¼')
 
     else:
-        print('ÎÄ¼ş²»´æÔÚ£¡')
+        print('æ–‡ä»¶ä¸å­˜åœ¨ï¼')
 
 
 if __name__ == '__main__':
     main()
+#è¿™æ˜¯ä¸€ä¸ªæµ‹è¯•
